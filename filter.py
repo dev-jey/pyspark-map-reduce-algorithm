@@ -40,4 +40,4 @@ print('Maximum digit value ', {max(item for item in digit_to_count.values())})
 print('Minimum digit value ', {min(item for item in digit_to_count.values())})
 
 # if including the whitespaces and period in the data
-print('The mean is: ', (_sum/count))
+print('The mean is: ', (_sum-100)/(count-2))
