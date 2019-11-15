@@ -11,7 +11,10 @@ lines = sc.textFile("dataset.txt")
 
 # Call collect() to get all data
 llist = lines.collect()
+
 digit_to_count = {}
+
+#Getloop through the digits, create a list and get the count of each digit
 for i in llist:
     data = sc.parallelize(list(i))
     counts = data.map(lambda x:
@@ -21,8 +24,6 @@ for i in llist:
     for (word, count) in counts:
         digit_to_count[word] = count
         print("{}: {}".format(word, count))
-
-print(digit_to_count)
 
 '''Calculation of the mean of all the values counted in the reducer'''
 count = 0
@@ -38,8 +39,6 @@ print('Maximum digit value ', {max(item for item in digit_to_count.values())})
 # minimum digit value
 print('Minimum digit value ', {min(item for item in digit_to_count.values())})
 
-
-print(count, _sum)
 # if including the whitespaces and period in the data
 print('The mean is: ', (_sum/count))
 # if not in cluding the period and whitespaces in the data
