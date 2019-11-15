@@ -26,12 +26,13 @@ for i in llist:
         print("{}: {}".format(word, count))
 
 '''Calculation of the mean of all the values counted in the reducer'''
-count = 0
 _sum = 0
-for key in digit_to_count:
-    count += 1
-    _sum += digit_to_count[key]
-
+for (key, value) in digit_to_count.items():
+    if key == ' ' or key == '.':
+        pass
+    else:
+        val = int(key)*int(value)
+        _sum += val
 
 # maximum digit value
 print('Maximum digit value ', {max(item for item in digit_to_count.values())})
@@ -40,4 +41,4 @@ print('Maximum digit value ', {max(item for item in digit_to_count.values())})
 print('Minimum digit value ', {min(item for item in digit_to_count.values())})
 
 # if including the whitespaces and period in the data
-print('The mean is: ', (_sum-100)/(count-2))
+print('The mean is: ', (_sum-100)/1000)
