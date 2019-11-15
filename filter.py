@@ -41,5 +41,3 @@ print('Minimum digit value ', {min(item for item in digit_to_count.values())})
 
 # if including the whitespaces and period in the data
 print('The mean is: ', (_sum/count))
-# if not in cluding the period and whitespaces in the data
-print('The mean is: ', (_sum-100)/(count-2))
